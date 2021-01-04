@@ -1,24 +1,13 @@
 const express = require("express");
 const cors = require("cors");
-const message = require("./server/print-message");
-const postsService = require("./server/posts-service");
-const constants = require("./src/constants");
 const app = express();
 const port = constants.SERVER_PORT;
+const postsService = require("./server/posts-service");
+const constants = require("./src/constants");
 
 const DEFAULT_USER_ID = 1;
 
 app.use(cors());
-
-app.get("/", (req, res) => {
-  const txt = "Root route";
-  res.send(txt);
-});
-
-app.get("/hello", (req, res) => {
-  const curMessage = message.getMessage("This is a fun test route.");
-  res.send(curMessage);
-});
 
 app.get("/posts", (req, res) => {
   res.setHeader("Content-Type", "application/json");
