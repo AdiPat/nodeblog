@@ -3,6 +3,7 @@ const cors = require("cors");
 const app = express();
 const postsService = require("./server/posts-service");
 const constants = require("./src/constants");
+const { StatusCodes, ReasonPhrases } = require("http-status-codes");
 
 const port = constants.SERVER_PORT;
 const DEFAULT_USER_ID = 1;
@@ -13,7 +14,7 @@ app.get("/posts", (req, res) => {
   const userId = DEFAULT_USER_ID;
   const posts = postsService.getAllPosts(userId);
   if (!posts) {
-    return res.sendStatus(404);
+    return res.status(StatusCodes.NOT_FOUND).send(ReasonPhrases.NOT_FOUND);
   }
   return res.json({ data: { userId, posts } });
 });
@@ -22,7 +23,7 @@ app.get("/posts/:postId", (req, res) => {
   const userId = DEFAULT_USER_ID;
   const post = postsService.getPost(userId, req.params.postId);
   if (!post) {
-    return res.sendStatus(404);
+    return res.status(StatusCodes.NOT_FOUND).send(ReasonPhrases.NOT_FOUND);
   }
   return res.json({ data: { userId, post } });
 });
@@ -32,7 +33,7 @@ app.get("/posts/:postId/comments", (req, res) => {
   const postId = req.params.postId;
   const comments = postsService.getAllComments(userId, postId);
   if (!comments) {
-    return res.sendStatus(404);
+    return res.status(StatusCodes.NOT_FOUND).send(ReasonPhrases.NOT_FOUND);
   }
   return res.json({ data: { userId, comments } });
 });
@@ -43,7 +44,7 @@ app.get("/posts/:postId/comments/:commentId", (req, res) => {
   const commentId = req.params.commentId;
   const comment = postsService.getComment(userId, postId, commentId);
   if (!comment) {
-    return res.sendStatus(404);
+    return res.status(StatusCodes.NOT_FOUND).send(ReasonPhrases.NOT_FOUND);
   }
   return res.json({ data: { userId, comment } });
 });
