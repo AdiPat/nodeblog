@@ -6,7 +6,7 @@ const postsService = require("./server/posts-service");
 const constants = require("./src/constants");
 const { StatusCodes, ReasonPhrases } = require("http-status-codes");
 
-const port = constants.SERVER_PORT;
+const port = process.env.PORT || constants.SERVER_PORT;
 const DEFAULT_USER_ID = 1;
 
 app.use(express.static(path.join(__dirname, "build")));
