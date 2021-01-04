@@ -1,10 +1,10 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const port = constants.SERVER_PORT;
 const postsService = require("./server/posts-service");
 const constants = require("./src/constants");
 
+const port = constants.SERVER_PORT;
 const DEFAULT_USER_ID = 1;
 
 app.use(cors());
