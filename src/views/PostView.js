@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getPost } from "../../api/posts-api";
+import { getPost } from "../api/posts-api";
 import { StatusCodes } from "http-status-codes";
-import { CommentContainer } from "./CommentContainer";
-import { PostContainer } from "../../components/PostContainer";
+import { CommentContainer } from "../components/CommentContainer";
+import { PostContainer } from "../components/PostContainer";
 
-function PostPage() {
+function PostView() {
   const [post, setPost] = useState(null);
   const [notFound, setNotFound] = useState(false);
   const [notFoundMessage, setNotFoundMessage] = useState("");
@@ -34,4 +34,4 @@ function PostPage() {
   ) : null;
 }
 
-export { PostPage };
+export { PostView };

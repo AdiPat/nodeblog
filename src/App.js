@@ -1,13 +1,13 @@
 import React from "react";
-import { PostListPage } from "./views/post-list/PostListPage";
+import { PostListView } from "./views/PostListView";
 import { AppRoutes } from "./routes";
-import { PostPage } from "./views/post/PostPage";
+import { PostView } from "./views/PostView";
 import "./App.css";
 
 function App() {
   return (
     <React.Fragment>
-      <AppRoutes indexView={PostListPage} postView={PostPage} />
+      <AppRoutes indexView={PostListView} postView={PostView} />
     </React.Fragment>
   );
 }

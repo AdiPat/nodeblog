@@ -1,9 +1,9 @@
 import React from "react";
 import { CommentCounter } from "./CommentCounter";
-import { CommentBody } from "../../components/CommentBody";
-import { CommentName } from "../../components/CommentName";
-import { CommentTimestamp } from "../../components/CommentTimestamp";
-import { CommentReplyButton } from "../../components/CommentReplyButton";
+import { CommentBody } from "./CommentBody";
+import { CommentName } from "./CommentName";
+import { CommentTimestamp } from "./CommentTimestamp";
+import { CommentReplyButton } from "./CommentReplyButton";
 
 function CommentContainer({ comments }) {
   return (

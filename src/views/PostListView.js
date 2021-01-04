@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { getAllPosts } from "../../api/posts-api";
+import { getAllPosts } from "../api/posts-api";
 import { StatusCodes } from "http-status-codes";
-import { PostContainer } from "../../components/PostContainer";
-import { ActionButton } from "../../components/ActionButton";
-import { PostListHeader } from "./PostListHeader";
+import { PostContainer } from "../components/PostContainer";
+import { ActionButton } from "../components/ActionButton";
+import { PostListHeader } from "../components/PostListHeader";
 
-function PostListPage() {
+function PostListView() {
   const [posts, setPosts] = useState([]);
   const [notFound, setNotFound] = useState(false);
   const [notFoundMessage, setNotFoundMessage] = useState("");
@@ -40,4 +40,4 @@ function PostListPage() {
   );
 }
 
-export { PostListPage };
+export { PostListView };
