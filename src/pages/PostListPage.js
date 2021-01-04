@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getAllPosts } from "../api/posts-api";
+import { shortenPostBody } from "../utils/utils";
 import moment from "moment";
 import { StatusCodes } from "http-status-codes";
 
@@ -20,17 +21,6 @@ function PostListPage() {
       }
     });
   }, []);
-
-  const shortenPostBody = (postBody) => {
-    const maxLen = 300;
-    if (typeof postBody != "string") {
-      return postBody;
-    }
-    if (postBody.length < maxLen) {
-      return postBody;
-    }
-    return postBody.slice(0, maxLen) + "...";
-  };
 
   return notFound ? (
     <p>{notFoundMessage}</p>
