@@ -16,8 +16,8 @@ const API_ENDPOINTS = {
 };
 
 module.exports = {
-  CLIENT_PORT,
   SERVER_PORT,
-  SERVER_URL,
+  DEV_SERVER_URL,
+  PRODUCTION_SERVER_URL,
   API_ENDPOINTS,
 };
