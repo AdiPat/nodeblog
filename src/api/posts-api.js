@@ -1,4 +1,4 @@
-import { SERVER_URL, API_ENDPOINTS } from "../constants";
+import { API_ENDPOINTS } from "../constants";
 import { StatusCodes, ReasonPhrases } from "http-status-codes";
 
 const errorResponse = {
@@ -8,7 +8,8 @@ const errorResponse = {
 };
 
 const getAllPosts = async () => {
-  const url = API_ENDPOINTS.posts(SERVER_URL);
+  const baseUrl = API_ENDPOINTS.baseUrl();
+  const url = API_ENDPOINTS.posts(baseUrl);
   let posts = [];
 
   try {
@@ -27,7 +28,8 @@ const getAllPosts = async () => {
 };
 
 const getPost = async (postId) => {
-  const url = API_ENDPOINTS.post(SERVER_URL, postId);
+  const baseUrl = API_ENDPOINTS.baseUrl();
+  const url = API_ENDPOINTS.post(baseUrl, postId);
   let post = null;
   try {
     const response = await fetch(url);
@@ -46,7 +48,8 @@ const getPost = async (postId) => {
 };
 
 const getCommentList = async (postId) => {
-  const url = API_ENDPOINTS.comments(SERVER_URL, postId);
+  const baseUrl = API_ENDPOINTS.baseUrl();
+  const url = API_ENDPOINTS.comments(baseUrl, postId);
   let comments = [];
   try {
     const response = await fetch(url);
@@ -61,7 +64,8 @@ const getCommentList = async (postId) => {
 };
 
 const getComment = async (postId, commentId) => {
-  const url = API_ENDPOINTS.comment(SERVER_URL, postId, commentId);
+  const baseUrl = API_ENDPOINTS.baseUrl();
+  const url = API_ENDPOINTS.comment(baseUrl, postId, commentId);
   let comment = null;
   try {
     const response = await fetch(url);
