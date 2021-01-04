@@ -1,8 +1,14 @@
+/**
+ *
+ * PostBody: Displays all post content (text)
+ *
+ */
+
 import React from "react";
 
 function PostBody({ body }) {
   const renderParagraphs = (text) => {
-    const paragraphs = body.split("\n");
+    const paragraphs = text.split("\n");
     const paraJsx = paragraphs.map((para) => (
       <p style={{ marginBottom: "5px" }}>{para}</p>
     ));

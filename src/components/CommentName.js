@@ -1,3 +1,9 @@
+/**
+ *
+ * CommentName: Name of user who posted the comment
+ *
+ */
+
 import React from "react";
 
 function CommentName({ name }) {

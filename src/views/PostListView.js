@@ -1,3 +1,9 @@
+/**
+ *
+ * PostListView: View for post list at /posts
+ *
+ */
+
 import React, { useState, useEffect } from "react";
 import { getAllPosts } from "../api/posts-api";
 import { StatusCodes } from "http-status-codes";

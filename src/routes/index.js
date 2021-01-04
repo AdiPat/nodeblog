@@ -1,3 +1,8 @@
+/**
+ *
+ * Routes: All app routes are declared here
+ *
+ */
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 

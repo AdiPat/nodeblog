@@ -1,4 +1,4 @@
-
+/* Global Styles */
 
 /* Buttons */
 
@@ -100,7 +100,7 @@
 .comment-container {
   display: flex;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .comment-name {
@@ -136,7 +136,7 @@
 .comment-counter {
   display: inline-block;
   font-size: 1.2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   color: grey;
   font-weight: 800;
   padding-bottom: 0.5rem;

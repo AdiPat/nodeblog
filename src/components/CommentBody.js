@@ -1,3 +1,9 @@
+/**
+ *
+ * CommentBody: Comment text posted by a user
+ *
+ */
+
 import React from "react";
 
 function CommentBody({ body }) {

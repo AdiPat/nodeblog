@@ -1,3 +1,9 @@
+/**
+ *
+ * CommentContainer: Contains all comment data
+ *
+ */
+
 import React from "react";
 import { CommentCounter } from "./CommentCounter";
 import { CommentBody } from "./CommentBody";

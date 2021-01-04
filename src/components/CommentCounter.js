@@ -1,3 +1,9 @@
+/**
+ *
+ * CommentCounter: Indicates number of comments on post
+ *
+ */
+
 import React from "react";
 
 function CommentCounter({ commentCount }) {

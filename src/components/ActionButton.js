@@ -1,3 +1,9 @@
+/**
+ *
+ * ActionButton: Themed button that performs some redirection
+ *
+ */
+
 import React from "react";
 
 function ActionButton({ text, link }) {

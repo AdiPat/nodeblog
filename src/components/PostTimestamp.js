@@ -1,3 +1,9 @@
+/**
+ *
+ * PostTimestamp: Timestamp of post indicates when the post was created)
+ *
+ */
+
 import React from "react";
 import moment from "moment";
 

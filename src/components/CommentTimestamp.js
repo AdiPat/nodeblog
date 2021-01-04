@@ -1,3 +1,9 @@
+/**
+ *
+ * CommentTimestamp: Indicates when the comment was created
+ *
+ */
+
 import React from "react";
 import moment from "moment";
 

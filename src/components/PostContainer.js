@@ -1,3 +1,9 @@
+/**
+ *
+ * PostContainer: Container that renders all post related data
+ *
+ */
+
 import React from "react";
 import { PostTitle } from "./PostTitle";
 import { PostTimestamp } from "./PostTimestamp";

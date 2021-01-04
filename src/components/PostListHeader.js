@@ -1,3 +1,9 @@
+/**
+ *
+ * PostListHeader: Post list header
+ *
+ */
+
 import React from "react";
 
 function PostListHeader() {

@@ -1,3 +1,4 @@
+// generate post preview by shortening text and appending with ellipsis (...)
 const shortenPostBody = (postBody) => {
   const maxLen = 300;
   if (typeof postBody != "string") {

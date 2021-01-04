@@ -1,3 +1,9 @@
+/**
+ *
+ * PostTitle: Title of post
+ *
+ */
+
 import React from "react";
 
 function PostTitle({ title }) {

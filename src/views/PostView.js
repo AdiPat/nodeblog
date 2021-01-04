@@ -1,3 +1,9 @@
+/**
+ *
+ * PostView: View for individual post at /posts/:postId
+ *
+ */
+
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getPost } from "../api/posts-api";
