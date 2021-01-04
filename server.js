@@ -51,5 +51,5 @@ app.get("/posts/:postId/comments/:commentId", (req, res) => {
 
 app.listen(port, () => {
   postsService.loadData();
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`NodeBlog listening at http://localhost:${port}`);
 });
