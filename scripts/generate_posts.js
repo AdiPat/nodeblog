@@ -36,7 +36,7 @@ const getRandomIntInRange = (min, max) => {
 };
 
 const generateRandomDate = (
-  startDate = moment(["2019"]).startOf("year"),
+  startDate = moment([2019]).startOf("year"),
   endDate = moment()
 ) => {
   const _startDate = moment(startDate);
@@ -46,7 +46,7 @@ const generateRandomDate = (
     throw new TypeError("Invalid date. ");
   }
 
-  const diffDays = _startDate.diff(_endDate, "days");
+  const diffDays = _endDate.clone().diff(_startDate, "days");
   const offset = getRandomIntInRange(1, diffDays);
 
   const randomDate = _startDate.clone().add(offset, "days");
