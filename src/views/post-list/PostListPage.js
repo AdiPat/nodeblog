@@ -26,7 +26,7 @@ function PostListPage() {
   return notFound ? (
     <p>{notFoundMessage}</p>
   ) : (
-    <React.Fragment>
+    <div className="post-list-container">
       <PostListHeader />
       <ul style={{ listStyle: "none" }}>
         {posts.map((post) => (

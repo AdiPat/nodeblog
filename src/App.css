@@ -1,5 +1,7 @@
-body {
-  padding: 3rem 4rem;
+
+.post-list-container {
+  border: "1px solid black";
+  padding: 1rem 10rem;
 }
 
 .btn-action {
