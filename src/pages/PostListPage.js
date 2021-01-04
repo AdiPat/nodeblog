@@ -1,13 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { getAllPosts } from "../api/posts-api";
 import moment from "moment";
+import { StatusCodes } from "http-status-codes";
 
 function PostListPage() {
   const [posts, setPosts] = useState([]);
+  const [notFound, setNotFound] = useState(false);
+  const [notFoundMessage, setNotFoundMessage] = useState("");
 
   useEffect(() => {
-    getAllPosts().then((postList) => {
-      setPosts(postList);
+    getAllPosts().then((data) => {
+      const status = data.statusCode;
+      if (status == StatusCodes.NOT_FOUND) {
+        setNotFound(true);
+        setNotFoundMessage(data.message);
+      } else {
+        const postList = data.posts;
+        setPosts(postList);
+      }
     });
   }, []);
 
@@ -22,7 +32,9 @@ function PostListPage() {
     return postBody.slice(0, maxLen) + "...";
   };
 
-  return (
+  return notFound ? (
+    <p>{notFoundMessage}</p>
+  ) : (
     <React.Fragment>
       <h1 style={{ textAlign: "center", marginBottom: 32 }}>Latest Stories</h1>
       <ul style={{ listStyle: "none" }}>

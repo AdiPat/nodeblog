@@ -1,18 +1,29 @@
 import { SERVER_URL, API_ENDPOINTS } from "../constants";
+import { StatusCodes, ReasonPhrases } from "http-status-codes";
+
+const errorResponse = {
+  data: null,
+  statusCode: StatusCodes.NOT_FOUND,
+  message: ReasonPhrases.NOT_FOUND,
+};
 
 const getAllPosts = async () => {
   const url = API_ENDPOINTS.posts(SERVER_URL);
   let posts = [];
+
   try {
     const response = await fetch(url);
+    if (response.status == StatusCodes.NOT_FOUND) {
+      return errorResponse;
+    }
     const payload = await response.json();
     posts = payload.data.posts;
   } catch (err) {
     console.error("Failed to get posts. ", err);
-  } finally {
-    posts = posts ? posts : [];
+    return errorResponse;
   }
-  return posts;
+
+  return { posts, statusCode: StatusCodes.OK, message: ReasonPhrases.OK };
 };
 
 const getPost = async (postId) => {
@@ -21,13 +32,17 @@ const getPost = async (postId) => {
   try {
     const response = await fetch(url);
     const payload = await response.json();
+    if (response.status == StatusCodes.NOT_FOUND) {
+      return errorResponse;
+    }
     post = payload.data.post;
   } catch (err) {
     console.error(`Failed to get post with postId=${postId}`, err);
+    return errorResponse;
   } finally {
     post = post ? post : null;
   }
-  return post;
+  return { post, statusCode: StatusCodes.OK, message: ReasonPhrases.OK };
 };
 
 const getCommentList = async (postId) => {
