@@ -1,6 +1,7 @@
 {
   "name": "nodeblog",
   "version": "0.1.0",
+  "main": "server.js",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
@@ -8,6 +9,7 @@
     "@testing-library/user-event": "^12.1.10",
     "express": "^4.17.1",
     "lorem-ipsum": "^2.0.3",
+    "moment": "^2.29.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
