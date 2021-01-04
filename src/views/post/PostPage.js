@@ -27,10 +27,10 @@ function PostPage() {
   return notFound ? (
     <p>{notFoundMessage}</p>
   ) : post ? (
-    <React.Fragment>
+    <div class="post-page-container">
       <PostContainer post={post} />
       <CommentContainer comments={post.comments} />
-    </React.Fragment>
+    </div>
   ) : null;
 }
 

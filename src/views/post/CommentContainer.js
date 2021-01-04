@@ -1,25 +1,30 @@
 import React from "react";
-import moment from "moment";
 import { CommentCounter } from "./CommentCounter";
+import { CommentBody } from "../../components/CommentBody";
+import { CommentName } from "../../components/CommentName";
+import { CommentTimestamp } from "../../components/CommentTimestamp";
+import { CommentReplyButton } from "../../components/CommentReplyButton";
 
 function CommentContainer({ comments }) {
   return (
-    <React.Fragment>
+    <ul className="comment-list-container">
       <CommentCounter commentCount={comments.length} />
       {comments.map((comment) => (
-        <div
-          style={{
-            border: "1px solid lightgrey",
-            margin: "16px 0",
-            padding: 16,
-          }}
-        >
-          <h4>{comment.name}</h4>
-          <p>{moment(comment.timestamp).format("MMMM, D YYYY")}</p>
-          <p>{comment.body}</p>
-        </div>
+        <li className="comment-container">
+          <img
+            className="comment-img"
+            src={`${process.env.PUBLIC_URL}/profile.png`}
+            alt="empty profile pic"
+          />
+          <div className="comment-content">
+            <CommentName name={comment.name} />
+            <CommentTimestamp timestamp={comment.timestamp} />
+            <CommentBody body={comment.body} />
+            <CommentReplyButton />
+          </div>
+        </li>
       ))}
-    </React.Fragment>
+    </ul>
   );
 }
 

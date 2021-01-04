@@ -1,7 +1,7 @@
 import React from "react";
 
 function CommentCounter({ commentCount }) {
-  return <p>{commentCount} Comments</p>;
+  return <p className="comment-counter">{commentCount} Comments</p>;
 }
 
 export { CommentCounter };
