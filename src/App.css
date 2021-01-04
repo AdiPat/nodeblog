@@ -1,38 +1,144 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* Buttons */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.btn-action {
+  display: inline-block;
+  background-color: #C62641;
+  text-transform: uppercase;
+  text-decoration: none;
   color: white;
+  padding: 0.8rem 4.2rem;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  min-width: 1rem;
+  font-weight: 700;
+  border: 2px solid transparent;
+  transition: all 0.5s ease-in;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-reply {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #C62641;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #C62641;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Posts */ 
+
+.post-list-container {
+  padding: 1rem 10rem;
+  margin-bottom: 2rem;
+}
+
+.post-list-header {
+  font-family: 'Merriweather Sans', sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-top: 2rem;
+  margin-bottom: 6rem;
+}
+
+.post-list-item {
+  padding-right: 5rem;
+  margin-bottom: 8rem;
+}
+
+.post-title-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.post-pretitle {
+  margin-left: -3rem;
+  color: #EDEDED;
+  font-size: 12rem;
+  z-index: 100;
+  left: -5rem;
+}
+
+.post-title {
+  position: absolute;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  z-index: 200;
+}
+
+.post-timestamp {
+  position: relative;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: gray;
+  z-index: 300;
+}
+
+.post-page-container {
+  padding: 10rem 10rem;
+}
+
+.post-body {
+  font-family: 'Zilla Slab', serif;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Comments */ 
+
+.comment-list-container {
+  list-style: none;
+}
+
+.comment-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.comment-name {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.comment-timestamp {
+  font-size: 14px;
+  font-weight: 500;
+  font-weight: 300;
+  margin-bottom: 5px;
+  color: gray;
+}
+
+.comment-body {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.comment-content {
+  margin-left: 1rem;
+}
+
+
+.comment-img {
+  display: flex;
+  align-self: flex-start;
+  height: 64px;
+  width: 64px;
+}
+
+.comment-counter {
+  display: inline-block;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: grey;
+  font-weight: 800;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid lightgray;
 }
