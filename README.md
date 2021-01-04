@@ -9,7 +9,7 @@ Simple blog-like application built with Node JS and React.
 - [Install NodeJS and React.](https://reactjs.org/tutorial/tutorialhtml#setup-option-2-local-development-environment)
 - From the root directory: `npm install`
 - Start development server: `npm start-dev`
-- The app will be live at `localhost:3000`.
+- The frontend will be live at `localhost:3000` and server will be live at `localhost:8000`.
 
 **NOTE:** Use `npm start-dev` for development server because `npm start` is for production build. Also, make sure all dev dependencies which are `npm-run-all` and `nodemon` are installed.
 
