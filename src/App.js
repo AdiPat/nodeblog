@@ -8,7 +8,7 @@ function App() {
 
   const loadMessage = async () => {
     try {
-      const response = await fetch("http://localhost:8080/hello");
+      const response = await fetch("http://localhost:8000/hello");
       const message = await response.text();
       console.log(message);
       setCustomMessage(message);
