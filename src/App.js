@@ -1,34 +1,12 @@
-import { useEffect, useState } from "react";
-import logo from "./logo.svg";
-import { CLIENT_PORT, CLIENT_URL } from "./constants";
+import React from "react";
+import { PostListPage } from "./pages/PostListPage";
 import "./App.css";
 
 function App() {
-  const [customMessage, setCustomMessage] = useState("");
-
-  const loadMessage = async () => {
-    try {
-      const response = await fetch("http://localhost:8000/hello");
-      const message = await response.text();
-      console.log(message);
-      setCustomMessage(message);
-    } catch (err) {
-      console.error("Failed: ", err);
-    }
-  };
-
-  useEffect(() => {
-    console.log(CLIENT_URL);
-    loadMessage();
-  }, []);
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>Welcome User.</p>
-        <p>Your custom message is: {customMessage}</p>
-      </header>
-    </div>
+    <React.Fragment>
+      <PostListPage />
+    </React.Fragment>
   );
 }
 
