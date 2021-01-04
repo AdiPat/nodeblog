@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { getAllPosts } from "../api/posts-api";
-import { shortenPostBody } from "../utils/utils";
 import moment from "moment";
+import { getAllPosts } from "../../api/posts-api";
+import { shortenPostBody } from "../../utils/utils";
 import { StatusCodes } from "http-status-codes";
+import { PostContainer } from "../../components/PostContainer";
+import { PostListHeader } from "./PostListHeader";
 
 function PostListPage() {
   const [posts, setPosts] = useState([]);
@@ -26,7 +28,7 @@ function PostListPage() {
     <p>{notFoundMessage}</p>
   ) : (
     <React.Fragment>
-      <h1 style={{ textAlign: "center", marginBottom: 32 }}>Latest Stories</h1>
+      <PostListHeader />
       <ul style={{ listStyle: "none" }}>
         {posts.map((post) => (
           <li
@@ -37,10 +39,7 @@ function PostListPage() {
               marginBottom: 32,
             }}
           >
-            <h2>{post.title}</h2>
-            <p>{moment(post.timestamp).format("MMMM, D YYYY")}</p>
-            <p>{shortenPostBody(post.body)}</p>
-            <p>{post.comments.length} Comments</p>
+            <PostContainer post={post} shortenBody />
             <a href={`/posts/${post.id}`}>Read On</a>
           </li>
         ))}

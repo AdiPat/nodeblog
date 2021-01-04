@@ -1,7 +1,7 @@
 import React from "react";
-import { PostListPage } from "./pages/PostListPage";
+import { PostListPage } from "./views/post-list/PostListPage";
 import { AppRoutes } from "./routes";
-import { PostPage } from "./pages/PostPage";
+import { PostPage } from "./views/post/PostPage";
 import "./App.css";
 
 function App() {
