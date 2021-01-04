@@ -24,7 +24,7 @@
     "start": "node server.js",
     "start-server": "./node_modules/.bin/nodemon server.js",
     "start-client": "react-scripts start",
-    "start-dev": "./node_modules/.bin/npm-run-all -p start-server start-client",
+    "start-dev": "NODE_ENV=development ./node_modules/.bin/npm-run-all -p start-server start-client",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
