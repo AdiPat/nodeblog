@@ -22,6 +22,8 @@ function PostPage() {
     });
   }, []);
 
+  console.log("PostPage.render(): ", post);
+
   return notFound ? (
     <p>{notFoundMessage}</p>
   ) : post ? (

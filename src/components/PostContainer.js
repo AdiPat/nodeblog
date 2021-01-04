@@ -6,14 +6,7 @@ import { shortenPostBody } from "../utils/utils";
 
 function PostContainer({ post, shortenBody }) {
   return (
-    <div
-      key={post.id}
-      style={{
-        border: "1px solid lightgrey",
-        padding: 16,
-        marginBottom: 32,
-      }}
-    >
+    <div key={post.id} className="post-container">
       <PostTitle title={post.title} />
       <PostTimestamp timestamp={post.timestamp} />
       <PostBody body={shortenBody ? shortenPostBody(post.body) : post.body} />

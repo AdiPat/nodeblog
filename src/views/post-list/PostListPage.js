@@ -30,16 +30,9 @@ function PostListPage() {
       <PostListHeader />
       <ul style={{ listStyle: "none" }}>
         {posts.map((post) => (
-          <li
-            key={post.id}
-            style={{
-              border: "1px solid lightgrey",
-              padding: 16,
-              marginBottom: 32,
-            }}
-          >
+          <li className="post-list-item" key={post.id}>
             <PostContainer post={post} shortenBody />
-            <ActionButton text="Read On" link={`/post/${post.id}`} />
+            <ActionButton text="Read On" link={`/posts/${post.id}`} />
           </li>
         ))}
       </ul>
