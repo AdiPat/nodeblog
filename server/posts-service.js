@@ -34,9 +34,12 @@ function getAllPosts(userId) {
 
   try {
     const userData = data[userId];
-    allPosts = userData.posts ? userData.posts : [];
+    if (userData.posts) {
+      allPosts = data[userId].posts;
+    }
   } catch (err) {
     console.error(`Failed to get posts for ${userId}`, err);
+    allPosts = null;
   }
 
   return allPosts;
@@ -49,11 +52,11 @@ function getPost(userId, postId) {
   }
 
   try {
-    const userData = data[userId];
-    allPosts = userData.posts ? userData.posts : [];
+    const allPosts = data[userId].posts;
     post = allPosts.find((curPost) => curPost.id == postId);
   } catch (err) {
     console.error(`Failed to get post for ${userId} and ${postId}`, err);
+    post = null;
   }
 
   return post;
@@ -67,12 +70,17 @@ function getAllComments(userId, postId) {
   try {
     const posts = data[userId].posts;
     const post = posts.find((curPost) => curPost.id == postId);
-    postComments = post.comments;
+    if (!post) {
+      postComments = null;
+    } else {
+      postComments = post.comments;
+    }
   } catch (err) {
     console.error(
       `Failed to get comments for userId=${userId} and postId=${postId}. `,
       err
     );
+    postComments = null;
   }
   return postComments;
 }
@@ -91,6 +99,7 @@ function getComment(userId, postId, commentId) {
       `Failed to get comment for userId=${userId} and postId=${postId} and commentId=${commentId}. `,
       err
     );
+    comment = null;
   }
   return comment;
 }
