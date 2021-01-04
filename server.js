@@ -21,7 +21,8 @@ app.get("/posts", (req, res) => {
 
 app.get("/posts/:postId", (req, res) => {
   const userId = DEFAULT_USER_ID;
-  const post = postsService.getPost(userId, req.params.postId);
+  const postId = parseInt(req.params.postId);
+  const post = postsService.getPost(userId, postId);
   if (!post) {
     return res.status(StatusCodes.NOT_FOUND).send(ReasonPhrases.NOT_FOUND);
   }
