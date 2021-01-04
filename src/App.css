@@ -1,4 +1,15 @@
-
 body {
   padding: 3rem 4rem;
 }
+
+.btn-action {
+  background-color: #C62641;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  padding: 1rem 4rem;
+  font-size: 1rem;
+  min-width: 1rem;
+  font-weight: 600;
+}
+

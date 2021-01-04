@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import moment from "moment";
 import { getAllPosts } from "../../api/posts-api";
-import { shortenPostBody } from "../../utils/utils";
 import { StatusCodes } from "http-status-codes";
 import { PostContainer } from "../../components/PostContainer";
+import { ActionButton } from "../../components/ActionButton";
 import { PostListHeader } from "./PostListHeader";
 
 function PostListPage() {
@@ -40,11 +39,11 @@ function PostListPage() {
             }}
           >
             <PostContainer post={post} shortenBody />
-            <a href={`/posts/${post.id}`}>Read On</a>
+            <ActionButton text="Read On" link={`/post/${post.id}`} />
           </li>
         ))}
       </ul>
-    </React.Fragment>
+    </div>
   );
 }
 
