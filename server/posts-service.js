@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const DATA_FILE_PATH = path.join(__dirname, "/data/user_posts.json");
-let data = null;
+var data = null;
 
 function loadData() {
   try {
