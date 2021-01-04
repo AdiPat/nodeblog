@@ -23,19 +23,22 @@ function PostListView() {
     });
   }, []);
 
+  const renderPosts = (postsList) => {
+    const postsJsx = postsList.map((post) => (
+      <li className="post-list-item" key={post.id}>
+        <PostContainer post={post} shortenBody />
+        <ActionButton text="Read On" link={`/posts/${post.id}`} />
+      </li>
+    ));
+    return postsJsx;
+  };
+
   return notFound ? (
     <p>{notFoundMessage}</p>
   ) : (
     <div className="post-list-container">
       <PostListHeader />
-      <ul style={{ listStyle: "none" }}>
-        {posts.map((post) => (
-          <li className="post-list-item" key={post.id}>
-            <PostContainer post={post} shortenBody />
-            <ActionButton text="Read On" link={`/posts/${post.id}`} />
-          </li>
-        ))}
-      </ul>
+      <ul style={{ listStyle: "none" }}>{renderPosts(posts)}</ul>
     </div>
   );
 }
